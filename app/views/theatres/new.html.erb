@@ -1,0 +1,22 @@
+
+ 
+<div class="panel right">
+  <h1>Add a theatre</h1>
+   
+  <%= form_for @theatre do |f| %>
+    <% if @theatre.errors.any? %>
+      <ul>
+        <% @theatre.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+ 
+    <%= f.text_field :theatrename, placeholder: "theatrename" %>
+    <%= f.text_field :moviename, placeholder: "moviename" %>
+    <%= f.submit "Submit" %>
+  
+  <% end %>
+
+</div>
+
