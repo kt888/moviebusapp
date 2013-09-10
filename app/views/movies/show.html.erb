@@ -15,8 +15,9 @@
         Display all movie information <br />
 			<% if !@movies.blank? %>
 				<% for item in @movies %>
-					<%= item.moviename %> <%= item.theatrenumber %> <br />
+					<%= item.moviename %> <%= item.theatrenumber %>  <br />
 				<% end %>
+				
 			<% else %>
 
 			<% end %>

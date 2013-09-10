@@ -6,4 +6,6 @@ class Movie < ActiveRecord::Base
 			find(:all)
 		end
 	end
+	
+	belongs_to :theatre
 end
