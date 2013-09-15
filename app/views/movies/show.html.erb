@@ -10,16 +10,20 @@
 </div>
 
 <div class="panel left">
-    <h1>Your Movies</h1>
+    <h1>Your Movies </h1>
     <div class="movieWrapper">
         Display all movie information <br />
-			<% if !@movies.blank? %>
-				<% for item in @movies %>
-					<%= item.moviename %> <%= item.theatrenumber %>  <br />
+			<% if @movies %>
+				<%  @movies.each do |item| %>
+					<%= item.moviename %> playing at theatre 
+					<%=  item.theatrenumber %> in <%=  item.theatre.theatrename %> 
+					
 				<% end %>
 				
-			<% else %>
+					  
+			
 
 			<% end %>
     </div>
 </div>
+

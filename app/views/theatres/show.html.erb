@@ -15,7 +15,7 @@
         Display all theatre information <br />
 			<% if !@theatres.blank? %>
 				<% for item in @theatres %>
-					<%= item.theatrename %> <%= item.moviename %> <br />
+					<%= item.theatrename %>  Is currently playing <%= item.moviename %> <br />
 				<% end %>
 			<% else %>
 

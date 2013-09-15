@@ -1,4 +1,5 @@
 class Theatre < ActiveRecord::Base
+attr_accessible :theatrename, :moviename
 def self.search(search)
 		if search
 			find(:all, :conditions => ['theatrename LIKE ?', "%#{search}%"])

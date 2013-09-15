@@ -1,7 +1,7 @@
 
  
 <div class="panel right">
-  <h1>Add a theatre</h1>
+  <h1>Add a Theatre</h1>
    
   <%= form_for @theatre do |f| %>
     <% if @theatre.errors.any? %>
@@ -12,11 +12,9 @@
       </ul>
     <% end %>
  
-    <%= f.text_field :theatrename, placeholder: "theatrename" %>
+    <%= f.text_field :theatrename, placeholder: "theatrename" %> 
     <%= f.text_field :moviename, placeholder: "moviename" %>
     <%= f.submit "Submit" %>
   
   <% end %>
-
-</div>
 
