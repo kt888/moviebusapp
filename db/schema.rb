@@ -11,26 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914232110) do
+ActiveRecord::Schema.define(version: 20130918070040) do
 
-  create_table "locations", force: true do |t|
-    t.string   "theatrename"
-    t.string   "moviename"
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "locations", primary_key: "l_id", force: true do |t|
+    t.string  "areaname"
+    t.integer "theatre_id"
+  end
+
+  add_index "locations", ["l_id"], name: "sqlite_autoindex_locations_1", unique: true
+
   create_table "movies", force: true do |t|
     t.string   "moviename"
-    t.integer  "theatrenumber"
+    t.string   "theatrenumber"
+    t.string   "string"
+    t.string   "theatre_id"
+    t.string   "int"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "theatre_id"
   end
 
   create_table "theatres", force: true do |t|
     t.string   "theatrename"
     t.string   "moviename"
+    t.string   "string"
+    t.string   "location_id"
+    t.string   "int"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

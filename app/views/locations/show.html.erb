@@ -1,0 +1,40 @@
+<header>
+	<div>
+		<p style ="padding:10px;"></p>
+	</div>
+	
+	<% if current_user %>
+    <%= link_to "Log Out", sessions_destroy_path %>
+	<% end %>
+	
+ </header>
+<div id="findLocation" class="panel left">
+    <h1>Find a theatre in your location</h1>
+	<%= form_tag location_path, :method => 'get' do %>
+		<p>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name=>nil %>   
+    
+		</p>
+	<% end %>
+</div>
+
+  
+
+<div class="panel left">
+    <h1>Your Theatres </h1>
+    <div class="movieWrapper">
+        Display all theatres in your area <br />
+			<% if @locations %>
+				<%  @locations.each do |item| %>
+					closest theatre in <%= item.areaname %> is <%= item.theatre.theatrename %>
+					
+				<% end %>
+				
+					  
+			
+
+			<% end %>
+    </div>
+</div>
+

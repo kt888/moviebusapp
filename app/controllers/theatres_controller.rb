@@ -1,15 +1,23 @@
 class TheatresController < ApplicationController
-def new
+	def new
 		@theatre = Theatre.new
 		
 	end
 	
 	def create
 		@theatre = Theatre.new(params[:theatre])
-		if @theatre.save
-			redirect_to new_movie_path, notice: "Thank you for adding a theatre!"
-		else
-			render 'new'
+		respond_to do |format|  
+			if @theatre.save
+				format.html { redirect_to new_theatre_path, :notice => 'Thank you for adding a theatre!' } 
+				#redirect_to new_movie_path, notice: "Thank you for adding a theatre!"
+				format.js
+				#render :partial => 'theatre', :object => @theatre
+				
+			else
+				#render 'new'
+				format.html { render :action => "new" }  
+				format.js
+			end
 		end
 	end
 	

@@ -1,3 +1,13 @@
+<header>
+	<div>
+		<p style ="padding:10px;"></p>
+	</div>
+	<div style= "margin-left: 740px;">
+	<% if current_user %>
+    <%= link_to "Log Out", sessions_destroy_path %>
+	<% end %>
+	</div>
+ </header>
 <div id="findtheatre" class="panel left">
     <h1>Find a theatre</h1>
 	<%= form_tag theatres_path, :method => 'get' do %>
@@ -16,9 +26,10 @@
 			<% if !@theatres.blank? %>
 				<% for item in @theatres %>
 					<%= item.theatrename %>  Is currently playing <%= item.moviename %> <br />
-				<% end %>
-			<% else %>
 
+				    <% end %>
+			<% else %>
+                    <%= puts "  hi  " %>
 			<% end %>
     </div>
 </div>

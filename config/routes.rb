@@ -1,7 +1,13 @@
 Moviebusapp::Application.routes.draw do
+
+
+  get "comments/home"
+  get "comments/delete"
   get "sessions/new"
   post "sessions/create"
   get "sessions/destroy"
+  get "theatres/show"
+  
   resources :users
 
     namespace :api, defaults: {format: 'xml' } do
@@ -11,7 +17,9 @@ Moviebusapp::Application.routes.draw do
 	end
 	resources :movies
 	resources :theatres
-	root to: 'movies#new'
+	resources :locations
+	
+	root to: 'users#new'
 	
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

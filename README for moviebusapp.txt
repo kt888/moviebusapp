@@ -8,3 +8,12 @@ The column theatrename in movies has been added later using migration. So is the
 URL to go to : http://localhost:3000/
 
 There are different options. Some movies have been added, it can be verified by going to find a movie( Search for jobs, the result will be displayed.).Movies can also be added in add a movie.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Part 2 read me
+INSTRUCTIONS
+The database currently has only jaws movie with the association. Search for jaws and it will display where jaws is playing. The theatre displayed is amc. This is obtained from the theatre table.
+Ajax has been used to add a theatre. The code is there in theatres folder under view.
+
+For xml generation, type - http://localhost:3000/api/v1/theatres.xml in the url. I have made a separate folder for xml.

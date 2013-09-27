@@ -1,3 +1,13 @@
+<header>
+	<div>
+		<p style ="padding:10px;"></p>
+	</div>
+	
+	<% if current_user %>
+    <%= link_to "Log Out", sessions_destroy_path %>
+	<% end %>
+	
+ </header>
 <div id="findMovie" class="panel left">
     <h1>Find a movie</h1>
 	<%= form_tag movie_path, :method => 'get' do %>
@@ -9,14 +19,16 @@
 	<% end %>
 </div>
 
+  
+
 <div class="panel left">
     <h1>Your Movies </h1>
     <div class="movieWrapper">
         Display all movie information <br />
 			<% if @movies %>
 				<%  @movies.each do |item| %>
-					<%= item.moviename %> playing at theatre 
-					<%=  item.theatrenumber %> in <%=  item.theatre.theatrename %> 
+					<%= item.moviename %> is running in screen 
+					<%=  item.theatrenumber %> at  <%=  item.theatre.theatrename %> 
 					
 				<% end %>
 				

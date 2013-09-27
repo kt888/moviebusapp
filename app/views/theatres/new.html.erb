@@ -1,9 +1,18 @@
 
- 
-<div class="panel right">
+<header>
+	<div>
+		<p style ="padding:0px;"></p>
+	</div>
+	
+ </header>
+ <% if current_user %>
+ <%= link_to "Log Out", sessions_destroy_path, remote=>true %>
+<% end %>
+
+<div class="panel left">
   <h1>Add a Theatre</h1>
    
-  <%= form_for @theatre do |f| %>
+  <%= form_for(@theatre, :remote => true) do |f| %>
     <% if @theatre.errors.any? %>
       <ul>
         <% @theatre.errors.full_messages.each do |message| %>
@@ -14,7 +23,7 @@
  
     <%= f.text_field :theatrename, placeholder: "theatrename" %> 
     <%= f.text_field :moviename, placeholder: "moviename" %>
-    <%= f.submit "Submit" %>
+    <div><%= f.submit "Submit" %></div>
   
   <% end %>
-
+</div>
